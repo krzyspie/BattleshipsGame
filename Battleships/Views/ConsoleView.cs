@@ -15,6 +15,7 @@
 
         public void DisplayGameBoard()
         {
+            Console.Clear();
             Console.WriteLine("Hello, let's play a game!");
             Console.WriteLine();
             Console.WriteLine("|__|A|B|C|D|E|F|G|H|I|J|");
