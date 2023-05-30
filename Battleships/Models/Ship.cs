@@ -7,6 +7,7 @@ namespace Battleships.Models
         public Ship(ShipType shipType)
         {
             Type = shipType;
+            Coordinates = new List<ShipCoordinate>((int)shipType);
         }
 
         public ShipType Type { get; set; }

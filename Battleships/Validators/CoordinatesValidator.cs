@@ -12,7 +12,7 @@ namespace Battleships.Validators
             }
 
             string pattern = @"^[A-Ja-j]([1-9]|10)$";
-            Regex regex = new Regex(pattern);
+            Regex regex = new(pattern);
             
             Match match = regex.Match(userCordinates);
             

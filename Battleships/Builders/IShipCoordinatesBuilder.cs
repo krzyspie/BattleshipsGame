@@ -1,5 +1,4 @@
-﻿using Battleships.Helpers;
-using Battleships.Models;
+﻿using Battleships.Models;
 
 namespace Battleships.Builders
 {

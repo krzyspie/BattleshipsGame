@@ -2,3 +2,4 @@
 {
     public record ShipCoordinate(int Column, int Row);
 }
+ 

@@ -1,6 +1,4 @@
-﻿using Battleships.Models;
-
-namespace Battleships.Validators
+﻿namespace Battleships.Validators
 {
     public interface ICoordinatesValidator
     {

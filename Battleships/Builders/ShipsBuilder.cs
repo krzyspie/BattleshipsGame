@@ -5,12 +5,7 @@ namespace Battleships.Builders
 {
     public class ShipsBuilder : IShipsBuilder
     {
-        private readonly List<ShipType> shipTypes = new() { ShipType.Battleship, ShipType.Battleship, ShipType.Destroyer };
-        private readonly Dictionary<ShipType, short> shipsMapping = new Dictionary<ShipType, short>()
-        {
-            { ShipType.Battleship, 5 },
-            { ShipType.Destroyer, 4 }
-        };
+        private readonly List<ShipType> shipTypes = new() { ShipType.Battleship, ShipType.Destroyer, ShipType.Destroyer };
 
         public ShipsBuilder()
         {
@@ -21,7 +16,7 @@ namespace Battleships.Builders
 
         public List<Ship> GenerateShips()
         {
-            var shipCoordinatesCount = shipTypes.Sum(x => shipsMapping[x]);
+            var shipCoordinatesCount = shipTypes.Sum(x => (int)x);
             List<ShipCoordinate> allShipsCoordinates = new(shipCoordinatesCount);
             List<Ship> ships = new(shipTypes.Count);
 
@@ -36,11 +31,8 @@ namespace Battleships.Builders
         private Ship GenerateShip(ShipType shipType, List<ShipCoordinate> allShipsCoordinates)
         {
             var shouldRegenerateShip = false;
-            var shipLength = shipsMapping[shipType];
-            Ship ship = new(shipType)
-            {
-                Coordinates = new List<ShipCoordinate>(shipLength)
-            };
+            var shipLength = (int)shipType;
+            Ship ship = new(shipType);
 
             do
             {

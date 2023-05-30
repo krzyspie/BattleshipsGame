@@ -2,7 +2,7 @@
 {
     public enum ShipType
     {
-        Destroyer,
-        Battleship,
+        Destroyer = 4,
+        Battleship = 5,
     }
 }

@@ -30,7 +30,7 @@ namespace Battleships
 
             var shipsCoordinates = ships.SelectMany(x => x.Coordinates).ToList();
             List<ShipCoordinate> userShipCoordinates = new(Constants.Constants.Settings.RowCount * Constants.Constants.Settings.ColumnCount);
-            bool continueGame = true;
+            bool shouldContinueGame = true;
 
             do
             {
@@ -58,7 +58,9 @@ namespace Battleships
                 bool isShipHit = existingCoordinate != null && shotShip != null;
                 if (isShipHit)
                 {
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
                     shotShip.Coordinates.Remove(userShipCoordinate);
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
                     bool isShipDestroyed = !shotShip.Coordinates.Any();
                     if (isShipDestroyed)
@@ -81,9 +83,9 @@ namespace Battleships
                     userShipCoordinates.Add(userShipCoordinate);
                 }
 
-                continueGame = ships.SelectMany(x => x.Coordinates).Any();
+                shouldContinueGame = ships.SelectMany(x => x.Coordinates).Any();
 
-            } while (continueGame);
+            } while (shouldContinueGame);
 
             gameView.DisplayEndGameMessage();
         }

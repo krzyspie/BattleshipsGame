@@ -14,7 +14,6 @@ namespace Battleships.Tests.Controllers
         private readonly Mock<IShipsBuilder> mockShipsBuilder = new Mock<IShipsBuilder>();
         private readonly Mock<ICoordinatesValidator> mockValidator = new Mock<ICoordinatesValidator>();
         private readonly Mock<ICoordinateExtractor> mockCoordinateExtractor = new Mock<ICoordinateExtractor>();
-        //private readonly Mock<IShipCoordinatesBuilder> mockShipCoordinatesBuilder = new Mock<IShipCoordinatesBuilder>();
         private readonly List<Ship> ships = new List<Ship>
         {
             new Ship(ShipType.Battleship) { Coordinates = new List<ShipCoordinate> { new ShipCoordinate(1, 2), new ShipCoordinate(5, 2) } }
