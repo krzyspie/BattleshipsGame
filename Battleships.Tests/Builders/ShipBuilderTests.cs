@@ -93,7 +93,7 @@ namespace Battleships.Tests.Builders
             Assert.Equal(firstShipCoordinates, ships[0].Coordinates);
             Assert.Equal(ShipType.Battleship, ships[0].Type);
             Assert.Equal(secondShipCoordinates, ships[1].Coordinates);
-            Assert.Equal(ShipType.Battleship, ships[1].Type);
+            Assert.Equal(ShipType.Destroyer, ships[1].Type);
             Assert.Equal(fourthShipCoordinates, ships[2].Coordinates);
             Assert.Equal(ShipType.Destroyer, ships[2].Type);
 
